@@ -3,6 +3,7 @@ plugins {
 	alias(libs.plugins.kotlin.plugin.spring)
 	alias(libs.plugins.springframework.boot)
 	alias(libs.plugins.spring.dependency.management)
+	alias(libs.plugins.ktlint)
 }
 
 group = "com.parking"
@@ -20,16 +21,11 @@ repositories {
 
 dependencies {
 	implementation(libs.bundles.arrow)
+	implementation(libs.bundles.kotlin)
+	implementation(libs.bundles.database)
 	implementation(libs.bundles.spring)
-	implementation(libs.kotlin.reflect)
-	implementation(libs.hikari)
-	runtimeOnly(libs.postgresql)
-	implementation(libs.postgresql)
-	testImplementation(libs.spring.boot.starter)
-	testImplementation(libs.kotlin.test.junit5)
-	testRuntimeOnly(libs.junit.platform.launcher)
-	testImplementation(libs.mockk)
-	testImplementation(libs.spring.boot.starter.test)
+	implementation(libs.bundles.json)
+	testImplementation(libs.bundles.test)
 }
 
 kotlin {
