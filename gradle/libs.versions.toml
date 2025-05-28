@@ -1,0 +1,37 @@
+[versions]
+arrow = "2.0.1"
+kotlin = "2.1.10"
+testcontainers = "1.19.3"
+hikari = "6.2.1"
+postgresql = "42.7.5"
+mockk = "1.13.16"
+logback = "1.4.11"
+ktlint = "12.1.2"
+spring = "3.5.0"
+junit-platform-launcher = "1.12.2"
+spring-dependency-management = "1.1.7"
+
+[libraries]
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+springframework-boot = { id = "org.springframework.boot", version.ref = "spring" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+[bundles]
+arrow = ["arrow-core"]
+spring = ["spring-boot-starter"]
