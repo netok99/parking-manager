@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: parking-postgres
+    environment:
+      POSTGRES_DB: parking_management
+      POSTGRES_USER: parking_user
+      POSTGRES_PASSWORD: parking_pass
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - parking-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U parking_user -d parking_management" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  garage-simulator:
+    image: cfontes0estapar/garage-sim:1.0.0
+    container_name: garage-simulator
+    ports:
+      - "3000:3000"
+    networks:
+      - parking-network
+    profiles:
+      - simulator
+
+volumes:
+  postgres_data:
+
+networks:
+  parking-network:
+    driver: bridge

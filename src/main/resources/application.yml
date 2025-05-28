@@ -1,0 +1,63 @@
+server:
+  port: 3003
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: parking-management
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parking_management
+    username: parking_user
+    password: parking_pass
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: ParkingHikariPool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1200000
+      leak-detection-threshold: 60000
+      connection-test-query: SELECT 1
+
+  # Jackson Configuration
+  jackson:
+    time-zone: America/Sao_Paulo
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+    serialization:
+      write-dates-as-timestamps: false
+
+logging:
+  level:
+    com.estapar: DEBUG
+    org.springframework.jdbc: DEBUG
+    com.zaxxer.hikari: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Management/Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Application Configuration
+app:
+  garage-simulator:
+    base-url: http://localhost:3000
+    garage-endpoint: /garage
+
+  business-rules:
+    grace-period-minutes: 15
+    billing-interval-minutes: 15
+    pricing:
+      occupancy-discount-25: 0.10
+      occupancy-normal-50: 0.00
+      occupancy-increase-75: 0.10
+      occupancy-increase-100: 0.25
