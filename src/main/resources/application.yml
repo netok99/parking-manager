@@ -30,7 +30,7 @@ spring:
 
 logging:
   level:
-    com.estapar: DEBUG
+    com.parking: DEBUG
     org.springframework.jdbc: DEBUG
     com.zaxxer.hikari: DEBUG
   pattern:
@@ -52,12 +52,11 @@ app:
   garage-simulator:
     base-url: http://localhost:3000
     garage-endpoint: /garage
-
-  business-rules:
-    grace-period-minutes: 15
-    billing-interval-minutes: 15
-    pricing:
-      occupancy-discount-25: 0.10
-      occupancy-normal-50: 0.00
-      occupancy-increase-75: 0.10
-      occupancy-increase-100: 0.25
+#  business-rules:
+#    grace-period-minutes: 15
+#    billing-interval-minutes: 15
+#    pricing:
+#      occupancy-discount-25: 0.10
+#      occupancy-normal-50: 0.00
+#      occupancy-increase-75: 0.10
+#      occupancy-increase-100: 0.25
