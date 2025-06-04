@@ -1,0 +1,224 @@
+{
+  "name": "Parking",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "garage",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:3003/api/v1/garage",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"garage\": [\n    {\n      \"sector\": \"A\",\n      \"basePrice\": 10.0,\n      \"max_capacity\": 10,\n      \"open_hour\": \"08:00\",\n      \"close_hour\": \"22:00\",\n      \"duration_limit_minutes\": 240\n    },\n    {\n      \"sector\": \"B\",\n      \"basePrice\": 4.0,\n      \"max_capacity\": 5,\n      \"open_hour\": \"05:00\",\n      \"close_hour\": \"18:00\",\n      \"duration_limit_minutes\": 120\n    }\n  ],\n  \"spots\": [\n    {\n      \"id\": 1,\n      \"sector\": \"A\",\n      \"lat\": -12.8944,\n      \"lng\": -38.3222\n    },\n    {\n      \"id\": 2,\n      \"sector\": \"A\",\n      \"lat\": -12.8956,\n      \"lng\": -38.3198\n    },\n    {\n      \"id\": 3,\n      \"sector\": \"A\",\n      \"lat\": -12.8967,\n      \"lng\": -38.3245\n    },\n    {\n      \"id\": 4,\n      \"sector\": \"A\",\n      \"lat\": -12.8932,\n      \"lng\": -38.3189\n    },\n    {\n      \"id\": 5,\n      \"sector\": \"A\",\n      \"lat\": -12.8978,\n      \"lng\": -38.3267\n    },\n    {\n      \"id\": 6,\n      \"sector\": \"A\",\n      \"lat\": -12.8901,\n      \"lng\": -38.3156\n    },\n    {\n      \"id\": 7,\n      \"sector\": \"A\",\n      \"lat\": -12.8889,\n      \"lng\": -38.3134\n    },\n    {\n      \"id\": 8,\n      \"sector\": \"A\",\n      \"lat\": -12.9012,\n      \"lng\": -38.3289\n    },\n    {\n      \"id\": 9,\n      \"sector\": \"A\",\n      \"lat\": -12.8876,\n      \"lng\": -38.3178\n    },\n    {\n      \"id\": 10,\n      \"sector\": \"A\",\n      \"lat\": -12.8923,\n      \"lng\": -38.3211\n    },\n    {\n      \"id\": 11,\n      \"sector\": \"B\",\n      \"lat\": -12.9015,\n      \"lng\": -38.3345\n    },\n    {\n      \"id\": 12,\n      \"sector\": \"B\",\n      \"lat\": -12.9078,\n      \"lng\": -38.3412\n    },\n    {\n      \"id\": 13,\n      \"sector\": \"B\",\n      \"lat\": -12.9134,\n      \"lng\": -38.3456\n    },\n    {\n      \"id\": 14,\n      \"sector\": \"B\",\n      \"lat\": -12.9089,\n      \"lng\": -38.3389\n    },\n    {\n      \"id\": 15,\n      \"sector\": \"B\",\n      \"lat\": -12.9156,\n      \"lng\": -38.3467\n    }\n  ]\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "plate-status",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:3003/api/v1/plate-status",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"license_plate\": \"ZUL0001\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "/revenue",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:3003/api/v1/revenue",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"date\": \"2025-01-01\",\n  \"sector\": \"A\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "spot-status",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:3003/api/v1/spot-status",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"lat\": -12.8944,\n  \"lng\": -38.3222\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "webhook-entry",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:3003/webhook",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"license_plate\": \"ZUL0001\",\n  \"entry_time\": \"2025-06-04T12:00:00.000Z\",\n  \"event_type\": \"ENTRY\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "webhook-exit",
+      "seq": 8,
+      "request": {
+        "url": "http://localhost:3003/webhook",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{    \n  \"license_plate\": \"ZUL0001\",\n  \"exit_time\": \"2025-01-01T18:00:00.000Z\",\n  \"event_type\": \"EXIT\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "webhook-parked",
+      "seq": 7,
+      "request": {
+        "url": "http://localhost:3003/webhook",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"license_plate\": \"ZUL0001\",\n  \"lat\": -12.8944,\n  \"lng\": -38.3222,\n  \"event_type\": \"PARKED\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    }
+  ],
+  "environments": []
+}

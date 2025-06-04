@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "Parking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "garage",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/api/v1/garage",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"garage\": [\n    {\n      \"sector\": \"A\",\n      \"basePrice\": 10.0,\n      \"max_capacity\": 10,\n      \"open_hour\": \"08:00\",\n      \"close_hour\": \"22:00\",\n      \"duration_limit_minutes\": 240\n    },\n    {\n      \"sector\": \"B\",\n      \"basePrice\": 4.0,\n      \"max_capacity\": 5,\n      \"open_hour\": \"05:00\",\n      \"close_hour\": \"18:00\",\n      \"duration_limit_minutes\": 120\n    }\n  ],\n  \"spots\": [\n    {\n      \"id\": 1,\n      \"sector\": \"A\",\n      \"lat\": -12.8944,\n      \"lng\": -38.3222\n    },\n    {\n      \"id\": 2,\n      \"sector\": \"A\",\n      \"lat\": -12.8956,\n      \"lng\": -38.3198\n    },\n    {\n      \"id\": 3,\n      \"sector\": \"A\",\n      \"lat\": -12.8967,\n      \"lng\": -38.3245\n    },\n    {\n      \"id\": 4,\n      \"sector\": \"A\",\n      \"lat\": -12.8932,\n      \"lng\": -38.3189\n    },\n    {\n      \"id\": 5,\n      \"sector\": \"A\",\n      \"lat\": -12.8978,\n      \"lng\": -38.3267\n    },\n    {\n      \"id\": 6,\n      \"sector\": \"A\",\n      \"lat\": -12.8901,\n      \"lng\": -38.3156\n    },\n    {\n      \"id\": 7,\n      \"sector\": \"A\",\n      \"lat\": -12.8889,\n      \"lng\": -38.3134\n    },\n    {\n      \"id\": 8,\n      \"sector\": \"A\",\n      \"lat\": -12.9012,\n      \"lng\": -38.3289\n    },\n    {\n      \"id\": 9,\n      \"sector\": \"A\",\n      \"lat\": -12.8876,\n      \"lng\": -38.3178\n    },\n    {\n      \"id\": 10,\n      \"sector\": \"A\",\n      \"lat\": -12.8923,\n      \"lng\": -38.3211\n    },\n    {\n      \"id\": 11,\n      \"sector\": \"B\",\n      \"lat\": -12.9015,\n      \"lng\": -38.3345\n    },\n    {\n      \"id\": 12,\n      \"sector\": \"B\",\n      \"lat\": -12.9078,\n      \"lng\": -38.3412\n    },\n    {\n      \"id\": 13,\n      \"sector\": \"B\",\n      \"lat\": -12.9134,\n      \"lng\": -38.3456\n    },\n    {\n      \"id\": 14,\n      \"sector\": \"B\",\n      \"lat\": -12.9089,\n      \"lng\": -38.3389\n    },\n    {\n      \"id\": 15,\n      \"sector\": \"B\",\n      \"lat\": -12.9156,\n      \"lng\": -38.3467\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "plate-status",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/api/v1/plate-status",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"license_plate\": \"ZUL0001\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "/revenue",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3003/api/v1/revenue",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"date\": \"2025-06-03\",\n  \"sector\": \"A\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "spot-status",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/api/v1/spot-status",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"lat\": -12.8944,\n  \"lng\": -38.3222\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "webhook-entry",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/webhook",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"license_plate\": \"ZUL0001\",\n  \"entry_time\": \"2025-01-01T12:00:00.000Z\",\n  \"event_type\": \"ENTRY\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "webhook-exit",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/webhook",
+        "body": {
+          "mode": "raw",
+          "raw": "{    \n  \"license_plate\": \"\",\n  \"exit_time\": \"2025-01-01T12:00:00.000Z\",\n  \"event_type\": \"EXIT\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "webhook-parked",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:3003/webhook",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"license_plate\": \"ZUL0001\",\n  \"lat\": -12.8944,\n  \"lng\": -38.3222,\n  \"event_type\": \"PARKED\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": []
+}
