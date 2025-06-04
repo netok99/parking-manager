@@ -7,7 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
-import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 @Configuration
@@ -20,7 +19,7 @@ class HikariProperties {
     var connectionTimeout: Long = 20000
     var maxLifetime: Long = 1200000
     var leakDetectionThreshold: Long = 0
-    var connectionTestQuery: String? = null
+    var connectionTestQuery: String = "SELECT 1"
 }
 
 const val DRIVER_CLASS_NAME = "org.postgresql.Driver"
@@ -59,9 +58,6 @@ class DatabaseConfig(private val hikariProperties: HikariProperties) {
                 addDataSourceProperty("reWriteBatchedInserts", "true")
             }
     )
-
-    @Bean
-    fun jdbcTemplate(dataSource: DataSource) = JdbcTemplate(dataSource)
 
     @Bean
     fun namedParameterJdbcTemplate(dataSource: DataSource) = NamedParameterJdbcTemplate(dataSource)

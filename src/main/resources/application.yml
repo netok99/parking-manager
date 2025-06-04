@@ -30,7 +30,7 @@ spring:
 
 logging:
   level:
-    com.estapar: DEBUG
+    com.parking: DEBUG
     org.springframework.jdbc: DEBUG
     com.zaxxer.hikari: DEBUG
   pattern:
@@ -52,7 +52,6 @@ app:
   garage-simulator:
     base-url: http://localhost:3000
     garage-endpoint: /garage
-
   business-rules:
     grace-period-minutes: 15
     billing-interval-minutes: 15
